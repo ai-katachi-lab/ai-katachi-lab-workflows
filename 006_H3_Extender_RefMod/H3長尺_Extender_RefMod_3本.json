@@ -1,0 +1,1896 @@
+{
+  "id": "9d37c2b4-3507-5045-84f0-eda4baf31972",
+  "revision": 0,
+  "last_node_id": 103,
+  "last_link_id": 14,
+  "nodes": [
+    {
+      "id": 90,
+      "type": "Note",
+      "pos": [
+        -1500,
+        -460
+      ],
+      "size": [
+        560,
+        420
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "【使い方メモ】\n・1本目のクリップカードの「First」欄で、最初のフレームにする画像を選んでください（最初は空です）。\n・顔を保つには、先に「H3長尺_RefMod作成.json」で RefMod を作り、「Load H3 RefMods」の mod_1 で選びます。(none) のままだと RefMod なしで作ります。\n・RefMod の ON/OFF は「RefMod ON/OFF（enable）」ノード。通常は ON（true）のまま使います。\n・プロンプトは左の「クリップNのプロンプト」で編集できます。Run を押すと各クリップに反映されます。\n・このワークフローは3本版です。クリップを減らすときは、カードの × ではなく「クリップNのプロンプト」ノードを後ろから削除してください。\n・各クリップの seed が同じ値で「after: fixed」になっているか確認してください。\n・run_mode は clip_by_clip（1本ずつ作って確かめる）が初期値です。まとめて作るときは full_batch にします。\n・1本の長さは各クリップカードで変えられます（初期値 10 秒。上限は約 14.4 秒）。\n・完成動画は Final Decode のプレビューから保存できます。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "title": "使い方"
+    },
+    {
+      "id": 101,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -2200,
+        -460
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in clear ankle-deep water at the shoreline, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She walks slowly toward the camera through the shallow water, small splashes rising around her bare feet, while her twin tails sway gently in the sea breeze. She raises one hand and waves softly toward the camera, then stops and smiles, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] 海っていいよね.</d> She keeps smiling at the camera with her arms relaxed at her sides.\n\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps. A light sea breeze blows quietly throughout.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "value": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in clear ankle-deep water at the shoreline, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She walks slowly toward the camera through the shallow water, small splashes rising around her bare feet, while her twin tails sway gently in the sea breeze. She raises one hand and waves softly toward the camera, then stops and smiles, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] 海っていいよね.</d> She keeps smiling at the camera with her arms relaxed at her sides.\n\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps. A light sea breeze blows quietly throughout.\n\nnon_diegetic_music: N/A"
+      },
+      "title": "クリップ1のプロンプト（ここを編集）",
+      "color": "#2a3a2a",
+      "bgcolor": "#3b513b"
+    },
+    {
+      "id": 102,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -2200,
+        -130
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water facing the camera, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the open sea behind her until her back is to the camera, raises her right arm and points toward the horizon, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] ねえ, 遠くまで見えるよ.</d> She lowers her arm and stands still with her back to the camera, quietly gazing at the sea while her twin tails sway gently in the breeze.\n\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and the water ripples softly around her ankles as she turns. A light sea breeze blows quietly throughout.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "value": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water facing the camera, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the open sea behind her until her back is to the camera, raises her right arm and points toward the horizon, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] ねえ, 遠くまで見えるよ.</d> She lowers her arm and stands still with her back to the camera, quietly gazing at the sea while her twin tails sway gently in the breeze.\n\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and the water ripples softly around her ankles as she turns. A light sea breeze blows quietly throughout.\n\nnon_diegetic_music: N/A"
+      },
+      "title": "クリップ2のプロンプト（ここを編集）",
+      "color": "#2a3a2a",
+      "bgcolor": "#3b513b"
+    },
+    {
+      "id": 103,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -2200,
+        200
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water with her back to the camera, gazing at the sea, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the camera, revealing her face, and gives a soft smile. She walks slowly toward the camera through the shallow water until her head and upper body fill most of the frame in a medium close-up, then stops. Looking into the camera, the young woman with a bright, clear voice (S1) says: <d>[Japanese] また来ようね.</d> She keeps a gentle smile.\n\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps as she approaches. A light sea breeze blows quietly throughout.\n\nnon_diegetic_music: N/A"
+      ],
+      "widgets_values_named": {
+        "value": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water with her back to the camera, gazing at the sea, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the camera, revealing her face, and gives a soft smile. She walks slowly toward the camera through the shallow water until her head and upper body fill most of the frame in a medium close-up, then stops. Looking into the camera, the young woman with a bright, clear voice (S1) says: <d>[Japanese] また来ようね.</d> She keeps a gentle smile.\n\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps as she approaches. A light sea breeze blows quietly throughout.\n\nnon_diegetic_music: N/A"
+      },
+      "title": "クリップ3のプロンプト（ここを編集）",
+      "color": "#2a3a2a",
+      "bgcolor": "#3b513b"
+    },
+    {
+      "id": 100,
+      "type": "MiniMaxH3PromptPackBridge",
+      "pos": [
+        -980,
+        380
+      ],
+      "size": [
+        420,
+        138
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "prompt_1",
+          "name": "prompt_1",
+          "type": "STRING",
+          "link": 1
+        },
+        {
+          "localized_name": "prompt_2",
+          "name": "prompt_2",
+          "type": "STRING",
+          "link": 2,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_3",
+          "name": "prompt_3",
+          "type": "STRING",
+          "link": 3,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_4",
+          "name": "prompt_4",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "prompt_pack",
+          "name": "prompt_pack",
+          "type": "H3_PROMPT_PACK",
+          "links": [
+            11
+          ]
+        },
+        {
+          "localized_name": "prompt_count",
+          "name": "prompt_count",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3PromptPackBridge"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "プロンプトをまとめて Extender へ"
+    },
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        -1500,
+        0
+      ],
+      "size": [
+        420,
+        110
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors",
+        "weight_dtype": "default"
+      },
+      "title": "10Eros beta5（本体モデル）"
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        -1500,
+        160
+      ],
+      "size": [
+        420,
+        130
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        -1500,
+        340
+      ],
+      "size": [
+        420,
+        80
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            9,
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+      },
+      "title": "映像VAE"
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        -1500,
+        470
+      ],
+      "size": [
+        420,
+        80
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            10,
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      },
+      "title": "音声VAE"
+    },
+    {
+      "id": 5,
+      "type": "MiniMaxH3RefModsLoader",
+      "pos": [
+        -1500,
+        620
+      ],
+      "size": [
+        420,
+        260
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "show_info",
+          "name": "show_info",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_info"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_1",
+          "name": "mod_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_1",
+          "name": "strength_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_1",
+          "name": "copies_1",
+          "type": "INT",
+          "widget": {
+            "name": "copies_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_2",
+          "name": "mod_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_2",
+          "name": "strength_2",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_2",
+          "name": "copies_2",
+          "type": "INT",
+          "widget": {
+            "name": "copies_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_3",
+          "name": "mod_3",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_3",
+          "name": "strength_3",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_3",
+          "name": "copies_3",
+          "type": "INT",
+          "widget": {
+            "name": "copies_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_4",
+          "name": "mod_4",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_4",
+          "name": "strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_4",
+          "name": "copies_4",
+          "type": "INT",
+          "widget": {
+            "name": "copies_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_5",
+          "name": "mod_5",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_5",
+          "name": "strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_5",
+          "name": "copies_5",
+          "type": "INT",
+          "widget": {
+            "name": "copies_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_6",
+          "name": "mod_6",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_6",
+          "name": "strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_6",
+          "name": "copies_6",
+          "type": "INT",
+          "widget": {
+            "name": "copies_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_7",
+          "name": "mod_7",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_7",
+          "name": "strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_7",
+          "name": "copies_7",
+          "type": "INT",
+          "widget": {
+            "name": "copies_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_8",
+          "name": "mod_8",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_8",
+          "name": "strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_8",
+          "name": "copies_8",
+          "type": "INT",
+          "widget": {
+            "name": "copies_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_total_tokens",
+          "name": "max_total_tokens",
+          "type": "INT",
+          "widget": {
+            "name": "max_total_tokens"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_1",
+          "name": "components_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_1",
+          "name": "visual_strength_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_1",
+          "name": "audio_strength_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_2",
+          "name": "components_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_2",
+          "name": "visual_strength_2",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_2",
+          "name": "audio_strength_2",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_3",
+          "name": "components_3",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_3",
+          "name": "visual_strength_3",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_3",
+          "name": "audio_strength_3",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_4",
+          "name": "components_4",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_4",
+          "name": "visual_strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_4",
+          "name": "audio_strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_5",
+          "name": "components_5",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_5",
+          "name": "visual_strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_5",
+          "name": "audio_strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_6",
+          "name": "components_6",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_6",
+          "name": "visual_strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_6",
+          "name": "audio_strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_7",
+          "name": "components_7",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_7",
+          "name": "visual_strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_7",
+          "name": "audio_strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_8",
+          "name": "components_8",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_8",
+          "name": "visual_strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_8",
+          "name": "audio_strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_8"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "mods",
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": [
+            5
+          ]
+        },
+        {
+          "localized_name": "prompt_hint",
+          "name": "prompt_hint",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModsLoader",
+        "refmod_visible_slots": [
+          1
+        ]
+      },
+      "widgets_values": [
+        false,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0
+      ],
+      "widgets_values_named": {
+        "show_info": false,
+        "mod_1": "(none)",
+        "strength_1": 1.0,
+        "copies_1": 1,
+        "mod_2": "(none)",
+        "strength_2": 1.0,
+        "copies_2": 1,
+        "mod_3": "(none)",
+        "strength_3": 1.0,
+        "copies_3": 1,
+        "mod_4": "(none)",
+        "strength_4": 1.0,
+        "copies_4": 1,
+        "mod_5": "(none)",
+        "strength_5": 1.0,
+        "copies_5": 1,
+        "mod_6": "(none)",
+        "strength_6": 1.0,
+        "copies_6": 1,
+        "mod_7": "(none)",
+        "strength_7": 1.0,
+        "copies_7": 1,
+        "mod_8": "(none)",
+        "strength_8": 1.0,
+        "copies_8": 1,
+        "max_total_tokens": 0,
+        "components_1": "All",
+        "visual_strength_1": 1.0,
+        "audio_strength_1": 1.0,
+        "components_2": "All",
+        "visual_strength_2": 1.0,
+        "audio_strength_2": 1.0,
+        "components_3": "All",
+        "visual_strength_3": 1.0,
+        "audio_strength_3": 1.0,
+        "components_4": "All",
+        "visual_strength_4": 1.0,
+        "audio_strength_4": 1.0,
+        "components_5": "All",
+        "visual_strength_5": 1.0,
+        "audio_strength_5": 1.0,
+        "components_6": "All",
+        "visual_strength_6": 1.0,
+        "audio_strength_6": 1.0,
+        "components_7": "All",
+        "visual_strength_7": 1.0,
+        "audio_strength_7": 1.0,
+        "components_8": "All",
+        "visual_strength_8": 1.0,
+        "audio_strength_8": 1.0
+      },
+      "title": "Load H3 RefMods（顔のRefMod）"
+    },
+    {
+      "id": 6,
+      "type": "MiniMaxH3RefModContinuumBridge",
+      "pos": [
+        -980,
+        0
+      ],
+      "size": [
+        420,
+        330
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 4
+        },
+        {
+          "localized_name": "mods",
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "link": 5
+        },
+        {
+          "localized_name": "enable",
+          "name": "enable",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "retention",
+          "name": "retention",
+          "type": "FLOAT",
+          "widget": {
+            "name": "retention"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "curve_direction",
+          "name": "curve_direction",
+          "type": "COMBO",
+          "widget": {
+            "name": "curve_direction"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "curve_shape",
+          "name": "curve_shape",
+          "type": "COMBO",
+          "widget": {
+            "name": "curve_shape"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "curve_value",
+          "name": "curve_value",
+          "type": "FLOAT",
+          "widget": {
+            "name": "curve_value"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scramble_seed",
+          "name": "scramble_seed",
+          "type": "INT",
+          "widget": {
+            "name": "scramble_seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scramble_mode",
+          "name": "scramble_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "scramble_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scramble_keep",
+          "name": "scramble_keep",
+          "type": "INT",
+          "widget": {
+            "name": "scramble_keep"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_total_tokens",
+          "name": "max_total_tokens",
+          "type": "INT",
+          "widget": {
+            "name": "max_total_tokens"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            6,
+            7
+          ]
+        },
+        {
+          "localized_name": "mods",
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": []
+        },
+        {
+          "localized_name": "status",
+          "name": "status",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModContinuumBridge"
+      },
+      "widgets_values": [
+        true,
+        1.0,
+        "constant",
+        "linear",
+        1.0,
+        -1,
+        "shuffle",
+        1,
+        0
+      ],
+      "widgets_values_named": {
+        "enable": true,
+        "retention": 1.0,
+        "curve_direction": "constant",
+        "curve_shape": "linear",
+        "curve_value": 1.0,
+        "scramble_seed": -1,
+        "scramble_mode": "shuffle",
+        "scramble_keep": 1,
+        "max_total_tokens": 0
+      },
+      "title": "RefMod ON/OFF（enable）",
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 61,
+      "type": "MiniMaxH3Extender",
+      "pos": [
+        -420,
+        0
+      ],
+      "size": [
+        1920,
+        1430
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 6
+        },
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 8
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 9
+        },
+        {
+          "localized_name": "run_mode",
+          "name": "run_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "run_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "ref_image_size",
+          "name": "ref_image_size",
+          "type": "COMBO",
+          "widget": {
+            "name": "ref_image_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "context_length",
+          "name": "context_length",
+          "type": "COMBO",
+          "widget": {
+            "name": "context_length"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_context_length",
+          "name": "audio_context_length",
+          "type": "INT",
+          "widget": {
+            "name": "audio_context_length"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clips_json",
+          "name": "clips_json",
+          "type": "STRING",
+          "widget": {
+            "name": "clips_json"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution_mode",
+          "name": "resolution_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "megapixels",
+          "name": "megapixels",
+          "type": "FLOAT",
+          "widget": {
+            "name": "megapixels"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "refs_json",
+          "name": "refs_json",
+          "type": "STRING",
+          "widget": {
+            "name": "refs_json"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "generation_mode",
+          "name": "generation_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "generation_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "motion_context",
+          "name": "motion_context",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "motion_context"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "fl2va_model",
+          "name": "fl2va_model",
+          "type": "MODEL",
+          "link": 7,
+          "shape": 7
+        },
+        {
+          "localized_name": "audio_vae",
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 10,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_audio",
+          "name": "ref_audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_audio_1",
+          "name": "ref_audio_1",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_audio_2",
+          "name": "ref_audio_2",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_audio_3",
+          "name": "ref_audio_3",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_1",
+          "name": "ref_video_1",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_fps_1",
+          "name": "ref_video_fps_1",
+          "type": "FLOAT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_audio_1",
+          "name": "ref_video_audio_1",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_2",
+          "name": "ref_video_2",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_fps_2",
+          "name": "ref_video_fps_2",
+          "type": "FLOAT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_audio_2",
+          "name": "ref_video_audio_2",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_3",
+          "name": "ref_video_3",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_fps_3",
+          "name": "ref_video_fps_3",
+          "type": "FLOAT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_video_audio_3",
+          "name": "ref_video_audio_3",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "ref_pack",
+          "name": "ref_pack",
+          "type": "H3_REF_PACK",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_pack",
+          "name": "prompt_pack",
+          "type": "H3_PROMPT_PACK",
+          "link": 11,
+          "shape": 7
+        },
+        {
+          "localized_name": "sigmas",
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "continue_existing_video",
+          "name": "continue_existing_video",
+          "type": "VIDEO",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "cache",
+          "name": "cache",
+          "type": "H3_MOTION_DISK_CACHE",
+          "links": [
+            12
+          ]
+        },
+        {
+          "localized_name": "clip_count",
+          "name": "clip_count",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "localized_name": "validated_count",
+          "name": "validated_count",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "localized_name": "status",
+          "name": "status",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "localized_name": "cache_size_mb",
+          "name": "cache_size_mb",
+          "type": "FLOAT",
+          "links": []
+        },
+        {
+          "localized_name": "build",
+          "name": "build",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3Extender",
+        "h3_manual_width": 864,
+        "h3_manual_height": 480
+      },
+      "widgets_values": [
+        "clip_by_clip",
+        864,
+        480,
+        "match",
+        7,
+        "res_multistep",
+        "simple",
+        1.0,
+        "22",
+        0,
+        "{\"version\":2,\"generation_mode\":\"fl2va\",\"motion_context\":true,\"causal_lineage\":[],\"clips\":[{\"id\":\"long3_1\",\"name\":\"clip1\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in clear ankle-deep water at the shoreline, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She walks slowly toward the camera through the shallow water, small splashes rising around her bare feet, while her twin tails sway gently in the sea breeze. She raises one hand and waves softly toward the camera, then stops and smiles, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] 海っていいよね.</d> She keeps smiling at the camera with her arms relaxed at her sides.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"manual\"},{\"id\":\"long3_2\",\"name\":\"clip2\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water facing the camera, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the open sea behind her until her back is to the camera, raises her right arm and points toward the horizon, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] ねえ, 遠くまで見えるよ.</d> She lowers her arm and stands still with her back to the camera, quietly gazing at the sea while her twin tails sway gently in the breeze.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and the water ripples softly around her ankles as she turns. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"},{\"id\":\"long3_3\",\"name\":\"clip3\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water with her back to the camera, gazing at the sea, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the camera, revealing her face, and gives a soft smile. She walks slowly toward the camera through the shallow water until her head and upper body fill most of the frame in a medium close-up, then stops. Looking into the camera, the young woman with a bright, clear voice (S1) says: <d>[Japanese] また来ようね.</d> She keeps a gentle smile.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps as she approaches. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"}],\"mode_clips\":{\"ref2va\":[{\"id\":\"long3_ref2va_1\",\"name\":\"\",\"prompt\":\"\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":5.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"manual\"}],\"fl2va\":[{\"id\":\"long3_1\",\"name\":\"clip1\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in clear ankle-deep water at the shoreline, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She walks slowly toward the camera through the shallow water, small splashes rising around her bare feet, while her twin tails sway gently in the sea breeze. She raises one hand and waves softly toward the camera, then stops and smiles, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] 海っていいよね.</d> She keeps smiling at the camera with her arms relaxed at her sides.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"manual\"},{\"id\":\"long3_2\",\"name\":\"clip2\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water facing the camera, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the open sea behind her until her back is to the camera, raises her right arm and points toward the horizon, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] ねえ, 遠くまで見えるよ.</d> She lowers her arm and stands still with her back to the camera, quietly gazing at the sea while her twin tails sway gently in the breeze.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and the water ripples softly around her ankles as she turns. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"},{\"id\":\"long3_3\",\"name\":\"clip3\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water with her back to the camera, gazing at the sea, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the camera, revealing her face, and gives a soft smile. She walks slowly toward the camera through the shallow water until her head and upper body fill most of the frame in a medium close-up, then stops. Looking into the camera, the young woman with a bright, clear voice (S1) says: <d>[Japanese] また来ようね.</d> She keeps a gentle smile.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps as she approaches. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"}]},\"manual_resolution\":{\"width\":864,\"height\":480},\"prompt_pack_signature\":\"e5ec9bb39c5414210fdf87bd0a92540f3765635fc6f6510fafde582269e713c8\"}",
+        "manual",
+        0.4,
+        "{\"version\":2,\"refs\":[null,null,null,null,null,null,null,null,null]}",
+        "fl2va",
+        true,
+        ""
+      ],
+      "widgets_values_named": {
+        "run_mode": "clip_by_clip",
+        "width": 864,
+        "height": 480,
+        "ref_image_size": "match",
+        "steps": 7,
+        "sampler_name": "res_multistep",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "context_length": "22",
+        "audio_context_length": 0,
+        "clips_json": "{\"version\":2,\"generation_mode\":\"fl2va\",\"motion_context\":true,\"causal_lineage\":[],\"clips\":[{\"id\":\"long3_1\",\"name\":\"clip1\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in clear ankle-deep water at the shoreline, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She walks slowly toward the camera through the shallow water, small splashes rising around her bare feet, while her twin tails sway gently in the sea breeze. She raises one hand and waves softly toward the camera, then stops and smiles, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] 海っていいよね.</d> She keeps smiling at the camera with her arms relaxed at her sides.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"manual\"},{\"id\":\"long3_2\",\"name\":\"clip2\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water facing the camera, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the open sea behind her until her back is to the camera, raises her right arm and points toward the horizon, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] ねえ, 遠くまで見えるよ.</d> She lowers her arm and stands still with her back to the camera, quietly gazing at the sea while her twin tails sway gently in the breeze.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and the water ripples softly around her ankles as she turns. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"},{\"id\":\"long3_3\",\"name\":\"clip3\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water with her back to the camera, gazing at the sea, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the camera, revealing her face, and gives a soft smile. She walks slowly toward the camera through the shallow water until her head and upper body fill most of the frame in a medium close-up, then stops. Looking into the camera, the young woman with a bright, clear voice (S1) says: <d>[Japanese] また来ようね.</d> She keeps a gentle smile.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps as she approaches. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"}],\"mode_clips\":{\"ref2va\":[{\"id\":\"long3_ref2va_1\",\"name\":\"\",\"prompt\":\"\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":5.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"manual\"}],\"fl2va\":[{\"id\":\"long3_1\",\"name\":\"clip1\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in clear ankle-deep water at the shoreline, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She walks slowly toward the camera through the shallow water, small splashes rising around her bare feet, while her twin tails sway gently in the sea breeze. She raises one hand and waves softly toward the camera, then stops and smiles, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] 海っていいよね.</d> She keeps smiling at the camera with her arms relaxed at her sides.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"manual\"},{\"id\":\"long3_2\",\"name\":\"clip2\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water facing the camera, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the open sea behind her until her back is to the camera, raises her right arm and points toward the horizon, and the young woman with a bright, clear voice (S1) says: <d>[Japanese] ねえ, 遠くまで見えるよ.</d> She lowers her arm and stands still with her back to the camera, quietly gazing at the sea while her twin tails sway gently in the breeze.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and the water ripples softly around her ankles as she turns. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"},{\"id\":\"long3_3\",\"name\":\"clip3\",\"prompt\":\"For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\\n\\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, bright natural daylight on a sunny beach with a clear blue sky. The young Japanese woman shown in <Picture 1>, with long straight black hair in high twin tails tied with light-blue hair ties and straight see-through bangs, wearing a yellow sleeveless hooded top with a small blue palm-tree print and a white pleated skirt, barefoot, stands in the clear shallow water with her back to the camera, gazing at the sea, preserving her appearance, clothing, hairstyle and the beach scene. The camera is static. She slowly turns around to face the camera, revealing her face, and gives a soft smile. She walks slowly toward the camera through the shallow water until her head and upper body fill most of the frame in a medium close-up, then stops. Looking into the camera, the young woman with a bright, clear voice (S1) says: <d>[Japanese] また来ようね.</d> She keeps a gentle smile.\\n\\noverall_soundscape: Gentle waves wash onto the shore in a steady rhythm, and soft splashes follow each of her footsteps as she approaches. A light sea breeze blows quietly throughout.\\n\\nnon_diegetic_music: N/A\",\"seed\":757358688076805,\"seed_mode\":\"fixed\",\"duration\":10.0,\"validated\":false,\"color_adjustment\":{\"saturation\":100,\"contrast\":100,\"brightness\":100},\"loras\":[],\"local_refs\":{\"version\":1,\"images\":[],\"videos\":[],\"audios\":[]},\"first_frame\":null,\"last_frame\":null,\"guides\":[],\"first_source\":\"previous_clip\"}]},\"manual_resolution\":{\"width\":864,\"height\":480},\"prompt_pack_signature\":\"e5ec9bb39c5414210fdf87bd0a92540f3765635fc6f6510fafde582269e713c8\"}",
+        "resolution_mode": "manual",
+        "megapixels": 0.4,
+        "refs_json": "{\"version\":2,\"refs\":[null,null,null,null,null,null,null,null,null]}",
+        "generation_mode": "fl2va",
+        "motion_context": true
+      }
+    },
+    {
+      "id": 70,
+      "type": "MiniMaxH3MotionContextDiskFinalDecode",
+      "pos": [
+        1560,
+        0
+      ],
+      "size": [
+        990,
+        1300
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "cache",
+          "name": "cache",
+          "type": "H3_MOTION_DISK_CACHE",
+          "link": 12
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 13
+        },
+        {
+          "localized_name": "audio_vae",
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 14
+        },
+        {
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "output_directory",
+          "name": "output_directory",
+          "type": "STRING",
+          "widget": {
+            "name": "output_directory"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "crf",
+          "name": "crf",
+          "type": "INT",
+          "widget": {
+            "name": "crf"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "preset",
+          "name": "preset",
+          "type": "COMBO",
+          "widget": {
+            "name": "preset"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_bitrate",
+          "name": "audio_bitrate",
+          "type": "COMBO",
+          "widget": {
+            "name": "audio_bitrate"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "autoplay",
+          "name": "autoplay",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "autoplay"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "auto_save_project",
+          "name": "auto_save_project",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_save_project"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "save_individual_clips",
+          "name": "save_individual_clips",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_individual_clips"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3MotionContextDiskFinalDecode"
+      },
+      "widgets_values": [
+        24.0,
+        "H3_long_3clips",
+        "",
+        "H.264",
+        17,
+        "fast",
+        "192k",
+        true,
+        false,
+        false,
+        ""
+      ],
+      "widgets_values_named": {
+        "fps": 24.0,
+        "filename_prefix": "H3_long_3clips",
+        "output_directory": "",
+        "codec": "H.264",
+        "crf": 17,
+        "preset": "fast",
+        "audio_bitrate": "192k",
+        "autoplay": true,
+        "auto_save_project": false,
+        "save_individual_clips": false
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      101,
+      0,
+      100,
+      0,
+      "STRING"
+    ],
+    [
+      2,
+      102,
+      0,
+      100,
+      1,
+      "STRING"
+    ],
+    [
+      3,
+      103,
+      0,
+      100,
+      2,
+      "STRING"
+    ],
+    [
+      4,
+      1,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      5,
+      5,
+      0,
+      6,
+      1,
+      "H3_REF_MODS"
+    ],
+    [
+      6,
+      6,
+      0,
+      61,
+      0,
+      "MODEL"
+    ],
+    [
+      7,
+      6,
+      0,
+      61,
+      19,
+      "MODEL"
+    ],
+    [
+      8,
+      2,
+      0,
+      61,
+      1,
+      "CLIP"
+    ],
+    [
+      9,
+      3,
+      0,
+      61,
+      2,
+      "VAE"
+    ],
+    [
+      10,
+      4,
+      0,
+      61,
+      20,
+      "VAE"
+    ],
+    [
+      11,
+      100,
+      0,
+      61,
+      35,
+      "H3_PROMPT_PACK"
+    ],
+    [
+      12,
+      61,
+      0,
+      70,
+      0,
+      "H3_MOTION_DISK_CACHE"
+    ],
+    [
+      13,
+      3,
+      0,
+      70,
+      1,
+      "VAE"
+    ],
+    [
+      14,
+      4,
+      0,
+      70,
+      2,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.55,
+      "offset": [
+        120,
+        120
+      ]
+    }
+  },
+  "version": 0.4
+}
