@@ -13,6 +13,7 @@ YouTube「AIカタチラボ」の動画で使った、[ComfyUI](https://github.c
 | [005_QwenImage21](005_QwenImage21) | 画像生成・画像編集・複数画像合成のワークフロー | Qwen-Image 2.1 | [5本目](https://youtu.be/bWXlMPHS9n0) |
 | [006_H3_Extender_RefMod](006_H3_Extender_RefMod) | クリップをつないで長い動画にし、最後まで同じ顔を保つワークフロー | MiniMax H3（10Eros Max） | [6本目](https://youtu.be/oiusJ_s7w7M) |
 | [008_H3_Finish](008_H3_Finish) | 作った動画の顔を直し、全体を高解像度にするワークフロー（顔を直す 実写・アニメ／全体を高解像度に） | MiniMax H3（10Eros Max ほか） | [8本目](https://youtu.be/mVo6Vim0Gpg) |
+| [009_MOSS_Image](009_MOSS_Image) | 枠を描いて人や物・文字（英語・日本語）の配置を決め、画像を作るワークフロー | MOSS-Image | [9本目](https://youtu.be/6GA2ObAW-cs) |
 
 ## モデルのライセンス
 
