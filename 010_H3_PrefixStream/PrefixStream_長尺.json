@@ -1,0 +1,3039 @@
+{
+  "id": "b5188b47-6bac-5d2b-a857-0623786114a1",
+  "revision": 0,
+  "last_node_id": 105,
+  "last_link_id": 42,
+  "nodes": [
+    {
+      "id": 90,
+      "type": "Note",
+      "pos": [
+        -2260,
+        -900
+      ],
+      "size": [
+        640,
+        640
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "【使い方メモ】\n・はじめに「最初の画像（1本目だけ使う）」で画像を選び、「Load H3 RefMods」の mod_1 で RefMod を選びます\n  （RefMod は PrefixStream_RefMod作成.json で先に作ります）。\n・右上の「実行する」を押すと、1本（約5秒）ができます。もう一度押すと、その続きの1本ができます。\n  1本目は最初の画像から、2本目からは前の1本の終わり約1秒を引き継いで作ります。\n・何本目かは素材箱から自動で数え、その本数の「★クリップNのプロンプト」を使います（使った本数は「今回使うプロンプト」に出ます）。\n・プロンプトは、オレンジ色の「★クリップNのプロンプト」に書きます。1本目の冒頭の1行（Picture 1 …）は自動で足します。\n・できた1本は ComfyUI の output/minimax_h3_bins/ に入ります。右下の「この1本をダウンロード」でも保存できます。\n【気に入らない1本を作り直すとき】\n・「続ける元のクリップ（素材箱）」の一覧から、1つ前のクリップを選んでから「実行する」。\n  違う結果にしたいときは、プロンプトを直すか「RandomNoise」の noise_seed を変えます。\n・ふだんの続きに戻すときは clip_selection を latest にします。\n【新しい動画を始めるとき】\n・project_name（素材箱の名前）を新しい名前に変えます。このワークフローの4か所（続ける元のクリップ・何本目か・素材箱に入れる・\n  この1本をダウンロード）と、PrefixStream_つないだ動画を作る.json を同じ名前にそろえてください。\n【メモ】\n・最後に、PrefixStream_つないだ動画を作る.json でつないだ1本の動画を作ります。\n・1本の長さは「H3 I2V」の length（フレーム数。24で1秒、17の倍数＋5、上限345）で変えます。途中で変えないでください。\n・RefMod のON/OFFは「RefMod ON/OFF（enable）」ノード。通常は ON（true）のまま使います。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 101,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -3000,
+        -900
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, the young woman shown in Picture 1 stands on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her, preserving her appearance, hairstyle, outfit and the background. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She breaks into a big smile, leans slightly toward the camera, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] みんな、いくよー！</d> Then she raises her right hand and snaps her fingers with a crisp click, and at that moment she starts bouncing lightly to the beat.\n\noverall_soundscape: For the first second there is only the quiet hum of a daytime city street, distant cars and faint footsteps. A sharp finger snap rings out, and the air suddenly fills with the music.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths. Silent at first, then the beat drops in exactly on her finger snap."
+      ],
+      "widgets_values_named": {
+        "value": "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, the young woman shown in Picture 1 stands on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her, preserving her appearance, hairstyle, outfit and the background. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She breaks into a big smile, leans slightly toward the camera, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] みんな、いくよー！</d> Then she raises her right hand and snaps her fingers with a crisp click, and at that moment she starts bouncing lightly to the beat.\n\noverall_soundscape: For the first second there is only the quiet hum of a daytime city street, distant cars and faint footsteps. A sharp finger snap rings out, and the air suddenly fills with the music.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths. Silent at first, then the beat drops in exactly on her finger snap."
+      },
+      "title": "★クリップ1のプロンプト（ここに書く）",
+      "color": "#a3561b",
+      "bgcolor": "#c96a22"
+    },
+    {
+      "id": 102,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -3000,
+        -570
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) dances on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her. The camera stays fixed in front of her at chest height, showing her full body from head to toe. Without stopping, she does rhythmic side steps left and right, swinging her arms in time with the beat, her hoodie sleeves and skirt swaying. She keeps the rhythm with small voiced breaths, and the woman with a bright, cheerful voice (S1) hums softly: <d>[Japanese] んっ、んっ</d>\n\noverall_soundscape: Her sneakers tap on the asphalt with each side step, and the fabric of her hoodie rustles as her arms swing. Faint city ambience in the background.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, at full energy, the groove continuing smoothly from before."
+      ],
+      "widgets_values_named": {
+        "value": "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) dances on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her. The camera stays fixed in front of her at chest height, showing her full body from head to toe. Without stopping, she does rhythmic side steps left and right, swinging her arms in time with the beat, her hoodie sleeves and skirt swaying. She keeps the rhythm with small voiced breaths, and the woman with a bright, cheerful voice (S1) hums softly: <d>[Japanese] んっ、んっ</d>\n\noverall_soundscape: Her sneakers tap on the asphalt with each side step, and the fabric of her hoodie rustles as her arms swing. Faint city ambience in the background.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, at full energy, the groove continuing smoothly from before."
+      },
+      "title": "★クリップ2のプロンプト（ここに書く）",
+      "color": "#a3561b",
+      "bgcolor": "#c96a22"
+    },
+    {
+      "id": 103,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -3000,
+        -240
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) keeps bouncing lightly on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She points playfully at the camera with one finger, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] ちゃんと見てる？</d> Then she gets a little shy, covers her mouth with her sleeve and giggles: <d>[Japanese] えへへ</d> She keeps swaying to the beat the whole time, like a friendly live streamer chatting with her viewers.\n\noverall_soundscape: Light footsteps on the asphalt and the soft rustle of her hoodie sleeve. Faint city ambience in the background.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, continuing from before, slightly lower in volume so her voice comes forward."
+      ],
+      "widgets_values_named": {
+        "value": "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) keeps bouncing lightly on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She points playfully at the camera with one finger, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] ちゃんと見てる？</d> Then she gets a little shy, covers her mouth with her sleeve and giggles: <d>[Japanese] えへへ</d> She keeps swaying to the beat the whole time, like a friendly live streamer chatting with her viewers.\n\noverall_soundscape: Light footsteps on the asphalt and the soft rustle of her hoodie sleeve. Faint city ambience in the background.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, continuing from before, slightly lower in volume so her voice comes forward."
+      },
+      "title": "★クリップ3のプロンプト（ここに書く）",
+      "color": "#a3561b",
+      "bgcolor": "#c96a22"
+    },
+    {
+      "id": 104,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -3000,
+        90
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) dances on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She gathers herself with a short call, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] くるっ…やっ！</d> She spins around once in place, her pleated skirt flaring out, then does a small jump and lands facing the camera again with a big smile. Her face stays the same throughout the spin.\n\noverall_soundscape: A soft whoosh of fabric as her skirt flares during the spin, and a firm thud of her platform sneakers landing on the asphalt.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, continuing from before and rising to its biggest, most exciting peak."
+      ],
+      "widgets_values_named": {
+        "value": "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) dances on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She gathers herself with a short call, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] くるっ…やっ！</d> She spins around once in place, her pleated skirt flaring out, then does a small jump and lands facing the camera again with a big smile. Her face stays the same throughout the spin.\n\noverall_soundscape: A soft whoosh of fabric as her skirt flares during the spin, and a firm thud of her platform sneakers landing on the asphalt.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, continuing from before and rising to its biggest, most exciting peak."
+      },
+      "title": "★クリップ4のプロンプト（ここに書く）",
+      "color": "#a3561b",
+      "bgcolor": "#c96a22"
+    },
+    {
+      "id": 105,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -3000,
+        420
+      ],
+      "size": [
+        640,
+        300
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) stands on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her, slightly out of breath after dancing. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She makes a heart shape with both hands in front of her chest, smiles warmly at the camera, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] ありがとう、また見てね！</d> She ends with a soft little laugh that lingers.\n\noverall_soundscape: Her light breathing and a soft giggle, with faint city ambience returning in the background.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, continuing from before and finishing with a sparkling chime as the song ends."
+      ],
+      "widgets_values_named": {
+        "value": "integrated_multimodal_description: [Shot 1] Live-action, natural daylight, continuing from the previous moment, the same cute young Japanese woman (black shoulder-length hair with bangs and long face-framing side locks, a lavender hairpin, an oversized lavender hoodie with a white hood and white drawstrings, a lavender, black and white tartan pleated mini skirt, black over-the-knee socks with lavender and white stripes at the top, chunky lavender-and-white platform sneakers, and a small black crossbody bag) stands on a bright, sunny city sidewalk in the daytime, with street trees, white bollards, planters and a glass office building behind her, slightly out of breath after dancing. The camera stays fixed in front of her at chest height, showing her full body from head to toe. She makes a heart shape with both hands in front of her chest, smiles warmly at the camera, and the woman with a bright, cheerful voice (S1) says: <d>[Japanese] ありがとう、また見てね！</d> She ends with a soft little laugh that lingers.\n\noverall_soundscape: Her light breathing and a soft giggle, with faint city ambience returning in the background.\n\nnon_diegetic_music: A bright, upbeat J-pop dance track at about 128 BPM with punchy kick drums, handclaps and sparkling synths, continuing from before and finishing with a sparkling chime as the song ends."
+      },
+      "title": "★クリップ5のプロンプト（ここに書く）",
+      "color": "#a3561b",
+      "bgcolor": "#c96a22"
+    },
+    {
+      "id": 13,
+      "type": "H3PSPromptByClip",
+      "pos": [
+        -2260,
+        -200
+      ],
+      "size": [
+        460,
+        250
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "project_name",
+          "name": "project_name",
+          "type": "STRING",
+          "widget": {
+            "name": "project_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "use_clip",
+          "name": "use_clip",
+          "type": "COMBO",
+          "widget": {
+            "name": "use_clip"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "source_clip_id",
+          "name": "source_clip_id",
+          "type": "STRING",
+          "link": 9,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_1",
+          "name": "prompt_1",
+          "type": "STRING",
+          "link": 1,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_2",
+          "name": "prompt_2",
+          "type": "STRING",
+          "link": 2,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_3",
+          "name": "prompt_3",
+          "type": "STRING",
+          "link": 3,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_4",
+          "name": "prompt_4",
+          "type": "STRING",
+          "link": 4,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_5",
+          "name": "prompt_5",
+          "type": "STRING",
+          "link": 5,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_6",
+          "name": "prompt_6",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_7",
+          "name": "prompt_7",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_8",
+          "name": "prompt_8",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_9",
+          "name": "prompt_9",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt_10",
+          "name": "prompt_10",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            12,
+            38
+          ]
+        },
+        {
+          "localized_name": "info",
+          "name": "info",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "H3PSPromptByClip"
+      },
+      "widgets_values": [
+        "my_video",
+        "自動（素材箱から数える）"
+      ],
+      "widgets_values_named": {
+        "project_name": "my_video",
+        "use_clip": "自動（素材箱から数える）"
+      },
+      "title": "何本目かでプロンプトを自動で切り替え"
+    },
+    {
+      "id": 28,
+      "type": "PreviewAny",
+      "pos": [
+        -2260,
+        260
+      ],
+      "size": [
+        460,
+        160
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "*",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "今回使うプロンプト（何本目か）"
+    },
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        -1700,
+        0
+      ],
+      "size": [
+        420,
+        110
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "unet_name",
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "weight_dtype",
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "10Eros_Max_h3_TURBO-hybrid_beta5_int8.safetensors",
+        "weight_dtype": "default"
+      },
+      "title": "10Eros beta5（本体モデル）"
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        -1700,
+        160
+      ],
+      "size": [
+        420,
+        130
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "type",
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "device",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        -1700,
+        340
+      ],
+      "size": [
+        420,
+        80
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            11,
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+      },
+      "title": "映像VAE"
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        -1700,
+        470
+      ],
+      "size": [
+        420,
+        80
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      },
+      "title": "音声VAE"
+    },
+    {
+      "id": 5,
+      "type": "MiniMaxH3RefModsLoader",
+      "pos": [
+        -1700,
+        620
+      ],
+      "size": [
+        420,
+        260
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "show_info",
+          "name": "show_info",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_info"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_1",
+          "name": "mod_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_1",
+          "name": "strength_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_1",
+          "name": "copies_1",
+          "type": "INT",
+          "widget": {
+            "name": "copies_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_2",
+          "name": "mod_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_2",
+          "name": "strength_2",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_2",
+          "name": "copies_2",
+          "type": "INT",
+          "widget": {
+            "name": "copies_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_3",
+          "name": "mod_3",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_3",
+          "name": "strength_3",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_3",
+          "name": "copies_3",
+          "type": "INT",
+          "widget": {
+            "name": "copies_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_4",
+          "name": "mod_4",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_4",
+          "name": "strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_4",
+          "name": "copies_4",
+          "type": "INT",
+          "widget": {
+            "name": "copies_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_5",
+          "name": "mod_5",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_5",
+          "name": "strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_5",
+          "name": "copies_5",
+          "type": "INT",
+          "widget": {
+            "name": "copies_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_6",
+          "name": "mod_6",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_6",
+          "name": "strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_6",
+          "name": "copies_6",
+          "type": "INT",
+          "widget": {
+            "name": "copies_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_7",
+          "name": "mod_7",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_7",
+          "name": "strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_7",
+          "name": "copies_7",
+          "type": "INT",
+          "widget": {
+            "name": "copies_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_8",
+          "name": "mod_8",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_8",
+          "name": "strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_8",
+          "name": "copies_8",
+          "type": "INT",
+          "widget": {
+            "name": "copies_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_total_tokens",
+          "name": "max_total_tokens",
+          "type": "INT",
+          "widget": {
+            "name": "max_total_tokens"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_1",
+          "name": "components_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_1",
+          "name": "visual_strength_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_1",
+          "name": "audio_strength_1",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_2",
+          "name": "components_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_2",
+          "name": "visual_strength_2",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_2",
+          "name": "audio_strength_2",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_3",
+          "name": "components_3",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_3",
+          "name": "visual_strength_3",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_3",
+          "name": "audio_strength_3",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_4",
+          "name": "components_4",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_4",
+          "name": "visual_strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_4",
+          "name": "audio_strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_5",
+          "name": "components_5",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_5",
+          "name": "visual_strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_5",
+          "name": "audio_strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_6",
+          "name": "components_6",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_6",
+          "name": "visual_strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_6",
+          "name": "audio_strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_7",
+          "name": "components_7",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_7",
+          "name": "visual_strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_7",
+          "name": "audio_strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_8",
+          "name": "components_8",
+          "type": "COMBO",
+          "widget": {
+            "name": "components_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_8",
+          "name": "visual_strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_8",
+          "name": "audio_strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_8"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "mods",
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": [
+            8
+          ]
+        },
+        {
+          "localized_name": "prompt_hint",
+          "name": "prompt_hint",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModsLoader",
+        "refmod_visible_slots": [
+          1
+        ]
+      },
+      "widgets_values": [
+        false,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        "(none)",
+        1.0,
+        1,
+        0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0,
+        "All",
+        1.0,
+        1.0
+      ],
+      "widgets_values_named": {
+        "show_info": false,
+        "mod_1": "(none)",
+        "strength_1": 1.0,
+        "copies_1": 1,
+        "mod_2": "(none)",
+        "strength_2": 1.0,
+        "copies_2": 1,
+        "mod_3": "(none)",
+        "strength_3": 1.0,
+        "copies_3": 1,
+        "mod_4": "(none)",
+        "strength_4": 1.0,
+        "copies_4": 1,
+        "mod_5": "(none)",
+        "strength_5": 1.0,
+        "copies_5": 1,
+        "mod_6": "(none)",
+        "strength_6": 1.0,
+        "copies_6": 1,
+        "mod_7": "(none)",
+        "strength_7": 1.0,
+        "copies_7": 1,
+        "mod_8": "(none)",
+        "strength_8": 1.0,
+        "copies_8": 1,
+        "max_total_tokens": 0,
+        "components_1": "All",
+        "visual_strength_1": 1.0,
+        "audio_strength_1": 1.0,
+        "components_2": "All",
+        "visual_strength_2": 1.0,
+        "audio_strength_2": 1.0,
+        "components_3": "All",
+        "visual_strength_3": 1.0,
+        "audio_strength_3": 1.0,
+        "components_4": "All",
+        "visual_strength_4": 1.0,
+        "audio_strength_4": 1.0,
+        "components_5": "All",
+        "visual_strength_5": 1.0,
+        "audio_strength_5": 1.0,
+        "components_6": "All",
+        "visual_strength_6": 1.0,
+        "audio_strength_6": 1.0,
+        "components_7": "All",
+        "visual_strength_7": 1.0,
+        "audio_strength_7": 1.0,
+        "components_8": "All",
+        "visual_strength_8": 1.0,
+        "audio_strength_8": 1.0
+      },
+      "title": "Load H3 RefMods（顔のRefMod）"
+    },
+    {
+      "id": 12,
+      "type": "LoadImage",
+      "pos": [
+        -1700,
+        940
+      ],
+      "size": [
+        420,
+        460
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "p06_first_frame.png"
+      },
+      "title": "最初の画像（1本目だけ使う）"
+    },
+    {
+      "id": 6,
+      "type": "MiniMaxH3RefModContinuumBridge",
+      "pos": [
+        -1200,
+        0
+      ],
+      "size": [
+        420,
+        330
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 7
+        },
+        {
+          "localized_name": "mods",
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "link": 8
+        },
+        {
+          "localized_name": "enable",
+          "name": "enable",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "enable"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "retention",
+          "name": "retention",
+          "type": "FLOAT",
+          "widget": {
+            "name": "retention"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "curve_direction",
+          "name": "curve_direction",
+          "type": "COMBO",
+          "widget": {
+            "name": "curve_direction"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "curve_shape",
+          "name": "curve_shape",
+          "type": "COMBO",
+          "widget": {
+            "name": "curve_shape"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "curve_value",
+          "name": "curve_value",
+          "type": "FLOAT",
+          "widget": {
+            "name": "curve_value"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scramble_seed",
+          "name": "scramble_seed",
+          "type": "INT",
+          "widget": {
+            "name": "scramble_seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scramble_mode",
+          "name": "scramble_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "scramble_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scramble_keep",
+          "name": "scramble_keep",
+          "type": "INT",
+          "widget": {
+            "name": "scramble_keep"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_total_tokens",
+          "name": "max_total_tokens",
+          "type": "INT",
+          "widget": {
+            "name": "max_total_tokens"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            14
+          ]
+        },
+        {
+          "localized_name": "mods",
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": []
+        },
+        {
+          "localized_name": "status",
+          "name": "status",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModContinuumBridge"
+      },
+      "widgets_values": [
+        true,
+        1.0,
+        "constant",
+        "linear",
+        1.0,
+        -1,
+        "shuffle",
+        1,
+        0
+      ],
+      "widgets_values_named": {
+        "enable": true,
+        "retention": 1.0,
+        "curve_direction": "constant",
+        "curve_shape": "linear",
+        "curve_value": 1.0,
+        "scramble_seed": -1,
+        "scramble_mode": "shuffle",
+        "scramble_keep": 1,
+        "max_total_tokens": 0
+      },
+      "title": "RefMod ON/OFF（enable）",
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 10,
+      "type": "MiniMaxPrefixCacheConfig",
+      "pos": [
+        -1200,
+        380
+      ],
+      "size": [
+        420,
+        230
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "cache_mode",
+          "name": "cache_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "cache_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "continuation_frames",
+          "name": "continuation_frames",
+          "type": "COMBO",
+          "widget": {
+            "name": "continuation_frames"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_tail_carryover",
+          "name": "audio_tail_carryover",
+          "type": "COMBO",
+          "widget": {
+            "name": "audio_tail_carryover"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_feather_ticks",
+          "name": "audio_feather_ticks",
+          "type": "INT",
+          "widget": {
+            "name": "audio_feather_ticks"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "video_context_denoise",
+          "name": "video_context_denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "video_context_denoise"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "reference_noise",
+          "name": "reference_noise",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "reference_noise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "cache_config",
+          "name": "cache_config",
+          "type": "MINIMAX_CACHE_CONFIG",
+          "links": [
+            16,
+            34
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxPrefixCacheConfig"
+      },
+      "widgets_values": [
+        "Native Masked AV (Recommended)",
+        "22",
+        "Match Video Handover",
+        0,
+        0.0,
+        false
+      ],
+      "widgets_values_named": {
+        "cache_mode": "Native Masked AV (Recommended)",
+        "continuation_frames": "22",
+        "audio_tail_carryover": "Match Video Handover",
+        "audio_feather_ticks": 0,
+        "video_context_denoise": 0.0,
+        "reference_noise": false
+      },
+      "title": "引き継ぐ長さ（22 フレーム＝約0.9秒）"
+    },
+    {
+      "id": 11,
+      "type": "MiniMaxClipBinPicker",
+      "pos": [
+        -1200,
+        660
+      ],
+      "size": [
+        620,
+        760
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "project_name",
+          "name": "project_name",
+          "type": "STRING",
+          "widget": {
+            "name": "project_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filter_rating",
+          "name": "filter_rating",
+          "type": "COMBO",
+          "widget": {
+            "name": "filter_rating"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_selection",
+          "name": "clip_selection",
+          "type": "STRING",
+          "widget": {
+            "name": "clip_selection"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "custom_clip_path",
+          "name": "custom_clip_path",
+          "type": "STRING",
+          "widget": {
+            "name": "custom_clip_path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "view_mode",
+          "name": "view_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "view_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            17
+          ]
+        },
+        {
+          "localized_name": "tail_frame",
+          "name": "tail_frame",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "localized_name": "clip_id",
+          "name": "clip_id",
+          "type": "STRING",
+          "links": [
+            9,
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxClipBinPicker"
+      },
+      "widgets_values": [
+        "my_video",
+        "Auto (首段全新 / 后续自动接力)",
+        "All (1-5 ⭐)",
+        "latest",
+        "",
+        "Deck (卡片流)"
+      ],
+      "widgets_values_named": {
+        "project_name": "my_video",
+        "mode": "Auto (首段全新 / 后续自动接力)",
+        "filter_rating": "All (1-5 ⭐)",
+        "clip_selection": "latest",
+        "custom_clip_path": "",
+        "view_mode": "Deck (卡片流)"
+      },
+      "title": "続ける元のクリップ（素材箱）",
+      "color": "#3a2a1a",
+      "bgcolor": "#5a4020"
+    },
+    {
+      "id": 14,
+      "type": "MiniMaxH3ImageToVideo",
+      "pos": [
+        -500,
+        0
+      ],
+      "size": [
+        420,
+        300
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 10
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 11
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 12
+        },
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "length",
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 13,
+          "shape": 7
+        },
+        {
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            15
+          ]
+        },
+        {
+          "localized_name": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ImageToVideo"
+      },
+      "widgets_values": [
+        "",
+        480,
+        864,
+        124
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "width": 480,
+        "height": 864,
+        "length": 124
+      },
+      "title": "H3 I2V（最初の画像とプロンプト）"
+    },
+    {
+      "id": 15,
+      "type": "MiniMaxPrefixCacheApplier",
+      "pos": [
+        -500,
+        360
+      ],
+      "size": [
+        420,
+        260
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 14
+        },
+        {
+          "localized_name": "conditioning",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "localized_name": "cache_config",
+          "name": "cache_config",
+          "type": "MINIMAX_CACHE_CONFIG",
+          "link": 16,
+          "shape": 7
+        },
+        {
+          "localized_name": "context_latent",
+          "name": "context_latent",
+          "type": "LATENT",
+          "link": 17,
+          "shape": 7
+        },
+        {
+          "localized_name": "target_latent",
+          "name": "target_latent",
+          "type": "LATENT",
+          "link": 18,
+          "shape": 7
+        },
+        {
+          "localized_name": "identity_latent",
+          "name": "identity_latent",
+          "type": "LATENT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "continuation_model",
+          "name": "continuation_model",
+          "type": "MODEL",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            19,
+            20
+          ]
+        },
+        {
+          "localized_name": "conditioning",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            21
+          ]
+        },
+        {
+          "localized_name": "session",
+          "name": "session",
+          "type": "MINIMAX_SESSION",
+          "links": [
+            33,
+            40
+          ]
+        },
+        {
+          "localized_name": "masked_latent",
+          "name": "masked_latent",
+          "type": "LATENT",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxPrefixCacheApplier"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "PrefixStream：前の終わりを頭に置いて固定",
+      "color": "#3a2a1a",
+      "bgcolor": "#5a4020"
+    },
+    {
+      "id": 16,
+      "type": "RandomNoise",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        380,
+        110
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "noise_seed",
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "NOISE",
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        757358688076805,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 757358688076805
+      }
+    },
+    {
+      "id": 17,
+      "type": "KSamplerSelect",
+      "pos": [
+        0,
+        150
+      ],
+      "size": [
+        380,
+        80
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "SAMPLER",
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "res_multistep"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "res_multistep"
+      }
+    },
+    {
+      "id": 18,
+      "type": "BasicScheduler",
+      "pos": [
+        0,
+        270
+      ],
+      "size": [
+        380,
+        140
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 19
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "SIGMAS",
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        7,
+        1.0
+      ],
+      "widgets_values_named": {
+        "scheduler": "simple",
+        "steps": 7,
+        "denoise": 1.0
+      }
+    },
+    {
+      "id": 19,
+      "type": "BasicGuider",
+      "pos": [
+        0,
+        450
+      ],
+      "size": [
+        380,
+        80
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 20
+        },
+        {
+          "localized_name": "conditioning",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "GUIDER",
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 20,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        440,
+        0
+      ],
+      "size": [
+        380,
+        330
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "noise",
+          "name": "noise",
+          "type": "NOISE",
+          "link": 22
+        },
+        {
+          "localized_name": "guider",
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 23
+        },
+        {
+          "localized_name": "sampler",
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 24
+        },
+        {
+          "localized_name": "sigmas",
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 25
+        },
+        {
+          "localized_name": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "output",
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            27,
+            29,
+            35
+          ]
+        },
+        {
+          "localized_name": "denoised_output",
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "生成（7ステップ）"
+    },
+    {
+      "id": 21,
+      "type": "VAEDecode",
+      "pos": [
+        880,
+        0
+      ],
+      "size": [
+        300,
+        80
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 27
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "映像にする"
+    },
+    {
+      "id": 22,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        880,
+        120
+      ],
+      "size": [
+        300,
+        80
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 29
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "AUDIO",
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "音声にする"
+    },
+    {
+      "id": 23,
+      "type": "MiniMaxTrimPrefixLatent",
+      "pos": [
+        880,
+        240
+      ],
+      "size": [
+        380,
+        260
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "trim_frames",
+          "name": "trim_frames",
+          "type": "INT",
+          "widget": {
+            "name": "trim_frames"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 31,
+          "shape": 7
+        },
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 32,
+          "shape": 7
+        },
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "session",
+          "name": "session",
+          "type": "MINIMAX_SESSION",
+          "link": 33,
+          "shape": 7
+        },
+        {
+          "localized_name": "cache_config",
+          "name": "cache_config",
+          "type": "MINIMAX_CACHE_CONFIG",
+          "link": 34,
+          "shape": 7
+        },
+        {
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "match_tail",
+          "name": "match_tail",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "match_tail"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "video_latent",
+          "name": "video_latent",
+          "type": "LATENT",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "trimmed_images",
+          "name": "trimmed_images",
+          "type": "IMAGE",
+          "links": [
+            36
+          ]
+        },
+        {
+          "localized_name": "trimmed_audio",
+          "name": "trimmed_audio",
+          "type": "AUDIO",
+          "links": [
+            37
+          ]
+        },
+        {
+          "localized_name": "trimmed_latent",
+          "name": "trimmed_latent",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxTrimPrefixLatent"
+      },
+      "widgets_values": [
+        0,
+        24.0,
+        true
+      ],
+      "widgets_values_named": {
+        "trim_frames": 0,
+        "fps": 24.0,
+        "match_tail": true
+      },
+      "title": "頭の約1秒（前と重なる部分）を切る"
+    },
+    {
+      "id": 24,
+      "type": "MiniMaxClipBinSaver",
+      "pos": [
+        1320,
+        0
+      ],
+      "size": [
+        420,
+        380
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "link": 35
+        },
+        {
+          "localized_name": "project_name",
+          "name": "project_name",
+          "type": "STRING",
+          "widget": {
+            "name": "project_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "shot_tag",
+          "name": "shot_tag",
+          "type": "STRING",
+          "widget": {
+            "name": "shot_tag"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "rating",
+          "name": "rating",
+          "type": "INT",
+          "widget": {
+            "name": "rating"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 36,
+          "shape": 7
+        },
+        {
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 37,
+          "shape": 7
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 38
+        },
+        {
+          "localized_name": "parent_clip_id",
+          "name": "parent_clip_id",
+          "type": "STRING",
+          "widget": {
+            "name": "parent_clip_id"
+          },
+          "link": 39
+        },
+        {
+          "localized_name": "video_file_name",
+          "name": "video_file_name",
+          "type": "*",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "localized_name": "save_video",
+          "name": "save_video",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_video"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "clip_id",
+          "name": "clip_id",
+          "type": "STRING",
+          "links": [
+            42
+          ]
+        },
+        {
+          "localized_name": "preview_image",
+          "name": "preview_image",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "localized_name": "bin_path",
+          "name": "bin_path",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxClipBinSaver"
+      },
+      "widgets_values": [
+        "my_video",
+        "Auto (自动编号)",
+        4,
+        "",
+        "",
+        true
+      ],
+      "widgets_values_named": {
+        "project_name": "my_video",
+        "shot_tag": "Auto (自动编号)",
+        "rating": 4,
+        "prompt": "",
+        "parent_clip_id": "",
+        "save_video": true
+      },
+      "title": "素材箱に入れる"
+    },
+    {
+      "id": 25,
+      "type": "MiniMaxCacheMonitor",
+      "pos": [
+        880,
+        560
+      ],
+      "size": [
+        380,
+        80
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "session",
+          "name": "session",
+          "type": "MINIMAX_SESSION",
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "telemetry_report",
+          "name": "telemetry_report",
+          "type": "STRING",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxCacheMonitor"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 26,
+      "type": "PreviewAny",
+      "pos": [
+        880,
+        680
+      ],
+      "size": [
+        380,
+        300
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "source",
+          "name": "source",
+          "type": "*",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "title": "引き継ぎの状態"
+    },
+    {
+      "id": 27,
+      "type": "H3PSDownloadClip",
+      "pos": [
+        1320,
+        440
+      ],
+      "size": [
+        560,
+        640
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "project_name",
+          "name": "project_name",
+          "type": "STRING",
+          "widget": {
+            "name": "project_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_id",
+          "name": "clip_id",
+          "type": "STRING",
+          "link": 42,
+          "shape": 7
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "H3PSDownloadClip"
+      },
+      "widgets_values": [
+        "my_video"
+      ],
+      "widgets_values_named": {
+        "project_name": "my_video"
+      },
+      "title": "この1本をダウンロード（動画＋続きのファイル）",
+      "color": "#1a3a2a",
+      "bgcolor": "#205a40"
+    }
+  ],
+  "links": [
+    [
+      1,
+      101,
+      0,
+      13,
+      3,
+      "STRING"
+    ],
+    [
+      2,
+      102,
+      0,
+      13,
+      4,
+      "STRING"
+    ],
+    [
+      3,
+      103,
+      0,
+      13,
+      5,
+      "STRING"
+    ],
+    [
+      4,
+      104,
+      0,
+      13,
+      6,
+      "STRING"
+    ],
+    [
+      5,
+      105,
+      0,
+      13,
+      7,
+      "STRING"
+    ],
+    [
+      6,
+      13,
+      1,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      7,
+      1,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      8,
+      5,
+      0,
+      6,
+      1,
+      "H3_REF_MODS"
+    ],
+    [
+      9,
+      11,
+      4,
+      13,
+      2,
+      "STRING"
+    ],
+    [
+      10,
+      2,
+      0,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      11,
+      3,
+      0,
+      14,
+      1,
+      "VAE"
+    ],
+    [
+      12,
+      13,
+      0,
+      14,
+      2,
+      "STRING"
+    ],
+    [
+      13,
+      12,
+      0,
+      14,
+      6,
+      "IMAGE"
+    ],
+    [
+      14,
+      6,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      15,
+      14,
+      0,
+      15,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      16,
+      10,
+      0,
+      15,
+      2,
+      "MINIMAX_CACHE_CONFIG"
+    ],
+    [
+      17,
+      11,
+      0,
+      15,
+      3,
+      "LATENT"
+    ],
+    [
+      18,
+      14,
+      1,
+      15,
+      4,
+      "LATENT"
+    ],
+    [
+      19,
+      15,
+      0,
+      18,
+      0,
+      "MODEL"
+    ],
+    [
+      20,
+      15,
+      0,
+      19,
+      0,
+      "MODEL"
+    ],
+    [
+      21,
+      15,
+      1,
+      19,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      22,
+      16,
+      0,
+      20,
+      0,
+      "NOISE"
+    ],
+    [
+      23,
+      19,
+      0,
+      20,
+      1,
+      "GUIDER"
+    ],
+    [
+      24,
+      17,
+      0,
+      20,
+      2,
+      "SAMPLER"
+    ],
+    [
+      25,
+      18,
+      0,
+      20,
+      3,
+      "SIGMAS"
+    ],
+    [
+      26,
+      15,
+      3,
+      20,
+      4,
+      "LATENT"
+    ],
+    [
+      27,
+      20,
+      0,
+      21,
+      0,
+      "LATENT"
+    ],
+    [
+      28,
+      3,
+      0,
+      21,
+      1,
+      "VAE"
+    ],
+    [
+      29,
+      20,
+      0,
+      22,
+      0,
+      "LATENT"
+    ],
+    [
+      30,
+      4,
+      0,
+      22,
+      1,
+      "VAE"
+    ],
+    [
+      31,
+      21,
+      0,
+      23,
+      1,
+      "IMAGE"
+    ],
+    [
+      32,
+      22,
+      0,
+      23,
+      2,
+      "AUDIO"
+    ],
+    [
+      33,
+      15,
+      2,
+      23,
+      4,
+      "MINIMAX_SESSION"
+    ],
+    [
+      34,
+      10,
+      0,
+      23,
+      5,
+      "MINIMAX_CACHE_CONFIG"
+    ],
+    [
+      35,
+      20,
+      0,
+      24,
+      0,
+      "LATENT"
+    ],
+    [
+      36,
+      23,
+      0,
+      24,
+      4,
+      "IMAGE"
+    ],
+    [
+      37,
+      23,
+      1,
+      24,
+      5,
+      "AUDIO"
+    ],
+    [
+      38,
+      13,
+      0,
+      24,
+      6,
+      "STRING"
+    ],
+    [
+      39,
+      11,
+      4,
+      24,
+      7,
+      "STRING"
+    ],
+    [
+      40,
+      15,
+      2,
+      25,
+      0,
+      "MINIMAX_SESSION"
+    ],
+    [
+      41,
+      25,
+      0,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      24,
+      0,
+      27,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.55,
+      "offset": [
+        120,
+        120
+      ]
+    }
+  },
+  "version": 0.4
+}

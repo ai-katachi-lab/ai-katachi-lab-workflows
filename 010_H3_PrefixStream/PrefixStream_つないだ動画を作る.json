@@ -1,0 +1,94 @@
+{
+  "id": "a6450487-72f8-54f4-8ef4-73de6738c143",
+  "revision": 0,
+  "last_node_id": 90,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 90,
+      "type": "Note",
+      "pos": [
+        -900,
+        -40
+      ],
+      "size": [
+        560,
+        380
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "【つないだ動画を作る】\n・右上の「実行する」を押すと、素材箱のクリップを古い順に1本の動画につなぎます。\n・last_clip が latest なら、一番新しいクリップまでの流れをつなぎます。\n  作り直して枝分かれしたときは、つなぎたい流れの最後のクリップの clip_id を書きます\n  （clip_id は PrefixStream_長尺.json の「続ける元のクリップ（素材箱）」の一覧で見られます）。\n・できた動画は右に出ます。ComfyUI の output/h3ps_joined/ に入ります（「つないだ動画をダウンロード」ボタンでも保存できます）。\n・2本目からは頭の重なりを切ってあるので、そのまま並べてつなぎます。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 1,
+      "type": "H3PSJoinChain",
+      "pos": [
+        -260,
+        -40
+      ],
+      "size": [
+        620,
+        720
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "project_name",
+          "name": "project_name",
+          "type": "STRING",
+          "widget": {
+            "name": "project_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "last_clip",
+          "name": "last_clip",
+          "type": "STRING",
+          "widget": {
+            "name": "last_clip"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "H3PSJoinChain"
+      },
+      "widgets_values": [
+        "my_video",
+        "latest"
+      ],
+      "widgets_values_named": {
+        "project_name": "my_video",
+        "last_clip": "latest"
+      },
+      "title": "クリップをつないだ動画を作る",
+      "color": "#1a3a2a",
+      "bgcolor": "#205a40"
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.55,
+      "offset": [
+        120,
+        120
+      ]
+    }
+  },
+  "version": 0.4
+}
