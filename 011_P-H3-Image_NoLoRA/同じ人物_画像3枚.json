@@ -1,0 +1,1085 @@
+{
+  "id": "e85c761e-0a8f-5085-84b0-c642cb76f246",
+  "revision": 0,
+  "last_node_id": 103,
+  "last_link_id": 18,
+  "nodes": [
+    {
+      "id": 101,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        340,
+        380
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "（ここに画像をアップロード）",
+        "image"
+      ],
+      "title": "★画像1（<Picture 1>）",
+      "color": "#a1582c",
+      "bgcolor": "#7a3d17"
+    },
+    {
+      "id": 102,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        420
+      ],
+      "size": [
+        340,
+        380
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "（ここに画像をアップロード）",
+        "image"
+      ],
+      "title": "★画像2（<Picture 2>）",
+      "color": "#a1582c",
+      "bgcolor": "#7a3d17"
+    },
+    {
+      "id": 103,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        840
+      ],
+      "size": [
+        340,
+        380
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "（ここに画像をアップロード）",
+        "image"
+      ],
+      "title": "★画像3（<Picture 3>）",
+      "color": "#a1582c",
+      "bgcolor": "#7a3d17"
+    },
+    {
+      "id": 1,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        380,
+        0
+      ],
+      "size": [
+        560,
+        420
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "title": "★プロンプト（ここに書く）",
+      "color": "#a1582c",
+      "bgcolor": "#7a3d17"
+    },
+    {
+      "id": 2,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        380,
+        460
+      ],
+      "size": [
+        360,
+        110
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "name": "upscale_method",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscale_method"
+          },
+          "link": null
+        },
+        {
+          "name": "megapixels",
+          "type": "FLOAT",
+          "widget": {
+            "name": "megapixels"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution_steps",
+          "type": "INT",
+          "widget": {
+            "name": "resolution_steps"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleToTotalPixels"
+      },
+      "widgets_values": [
+        "lanczos",
+        4,
+        32
+      ],
+      "title": "★画像の大きさ（megapixels＝総画素 MP、4 か 8）",
+      "color": "#a1582c",
+      "bgcolor": "#7a3d17"
+    },
+    {
+      "id": 3,
+      "type": "RandomNoise",
+      "pos": [
+        380,
+        610
+      ],
+      "size": [
+        360,
+        90
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        0,
+        "randomize"
+      ],
+      "title": "★シード",
+      "color": "#a1582c",
+      "bgcolor": "#7a3d17"
+    },
+    {
+      "id": 4,
+      "type": "MarkdownNote",
+      "pos": [
+        380,
+        740
+      ],
+      "size": [
+        560,
+        700
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 使い方（入れる画像 3枚）\n\n1. **★画像1〜3** に画像をアップロードします（choose file to upload）。\n- **★画像1** … プロンプトでは `<Picture 1>`（元にする画像。できる画像の縦横はこの画像に合わせます）\n- **★画像2** … プロンプトでは `<Picture 2>`\n- **★画像3** … プロンプトでは `<Picture 3>`\n2. **★プロンプト（ここに書く）** に、作りたい場面と、それぞれの画像の役割を英語で書きます。画像は `<Picture 1>` のように番号で呼びます。\n3. **★画像の大きさ** は、できる画像の総画素（MP）です。初めは 4。公式のおすすめは 4 か 8 です。\n4. 右上の **「実行する」** を押すと1枚できます。**★シード** は毎回ランダムに変わります。同じ画像を作り直すときは、ファイル名のシードを入れて control_after_generate を fixed にします。\n\n- 書き方の例（画像1＝人物の顔、画像2＝服）：`The woman from <Picture 1>: keep her same face and hairstyle, and dress her in the outfit from <Picture 2>.` に続けて、場面・ポーズ・写し方を英語で書きます。\n- ポーズの画像を入れるときは `Use <Picture N> only as a reference for the pose. Do not copy the face, hair or clothes of the person in <Picture N>.` と書き添えます。\n- 画像の枚数が違うときは、`同じ人物_画像N枚.json` を開き直します（1〜5枚）。\n- できた画像は「できた画像（保存）」に出て、ファイル名に使ったシードが入ります。ComfyUI の output フォルダの「同じ人物」にも保存されます。\n- 設定：8回・CFG なし・euler（公式の edit ワークフローと同じ）。プロンプト拡張は使いません。"
+      ],
+      "title": "使い方メモ"
+    },
+    {
+      "id": 10,
+      "type": "UNETLoader",
+      "pos": [
+        980,
+        0
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "unet_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "name": "weight_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "p-h3-image_int8_convrot.safetensors",
+        "default"
+      ],
+      "title": "画像を作る本体"
+    },
+    {
+      "id": 11,
+      "type": "MiniMaxH3SigmaShift",
+      "pos": [
+        980,
+        130
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8
+        },
+        {
+          "name": "shift_video",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift_video"
+          },
+          "link": null
+        },
+        {
+          "name": "shift_audio",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift_audio"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift"
+      },
+      "widgets_values": [
+        1,
+        1
+      ],
+      "title": "本体の設定（1.0 のまま）"
+    },
+    {
+      "id": 12,
+      "type": "CLIPLoader",
+      "pos": [
+        980,
+        260
+      ],
+      "size": [
+        400,
+        110
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "name": "type",
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "p-h3-image_text_encoder_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "title": "文章と画像を読み取る部分"
+    },
+    {
+      "id": 13,
+      "type": "VAELoader",
+      "pos": [
+        980,
+        410
+      ],
+      "size": [
+        400,
+        60
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7,
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "p-h3-image_vae_int8_convrot.safetensors"
+      ],
+      "title": "画像に変換する部分"
+    },
+    {
+      "id": 20,
+      "type": "PH3ImageConditioning",
+      "pos": [
+        1420,
+        0
+      ],
+      "size": [
+        400,
+        260
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 6
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "shape": 7,
+          "link": 7
+        },
+        {
+          "localized_name": "image_1",
+          "name": "images.image_1",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 2
+        },
+        {
+          "localized_name": "image_2",
+          "name": "images.image_2",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 3
+        },
+        {
+          "localized_name": "image_3",
+          "name": "images.image_3",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": 4
+        },
+        {
+          "localized_name": "image_4",
+          "name": "images.image_4",
+          "type": "IMAGE",
+          "shape": 7,
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 5
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PH3ImageConditioning"
+      },
+      "widgets_values": [
+        "",
+        0,
+        0
+      ],
+      "title": "画像とプロンプトをまとめる"
+    },
+    {
+      "id": 21,
+      "type": "BasicGuider",
+      "pos": [
+        1420,
+        300
+      ],
+      "size": [
+        400,
+        50
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 9
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": null
+    },
+    {
+      "id": 22,
+      "type": "KSamplerSelect",
+      "pos": [
+        1420,
+        390
+      ],
+      "size": [
+        400,
+        60
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "ManualSigmas",
+      "pos": [
+        1420,
+        490
+      ],
+      "size": [
+        400,
+        100
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "STRING",
+          "widget": {
+            "name": "sigmas"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ManualSigmas"
+      },
+      "widgets_values": [
+        "1.0, 0.984753, 0.967905, 0.951688, 0.925372, 0.881923, 0.810083, 0.528718, 0.0"
+      ],
+      "title": "描き直しの刻み（8回）"
+    },
+    {
+      "id": 24,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        1420,
+        630
+      ],
+      "size": [
+        400,
+        110
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 11
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 12
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 13
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 14
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            16
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": null,
+      "title": "画像を作る"
+    },
+    {
+      "id": 25,
+      "type": "VAEDecode",
+      "pos": [
+        1420,
+        780
+      ],
+      "size": [
+        400,
+        50
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 16
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": null
+    },
+    {
+      "id": 30,
+      "type": "SaveImage",
+      "pos": [
+        1860,
+        0
+      ],
+      "size": [
+        640,
+        900
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "同じ人物/画像3枚_seed%★シード.noise_seed%"
+      ],
+      "title": "できた画像（保存）"
+    }
+  ],
+  "links": [
+    [
+      1,
+      101,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      2,
+      0,
+      20,
+      2,
+      "IMAGE"
+    ],
+    [
+      3,
+      102,
+      0,
+      20,
+      3,
+      "IMAGE"
+    ],
+    [
+      4,
+      103,
+      0,
+      20,
+      4,
+      "IMAGE"
+    ],
+    [
+      5,
+      1,
+      0,
+      20,
+      6,
+      "STRING"
+    ],
+    [
+      6,
+      12,
+      0,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      7,
+      13,
+      0,
+      20,
+      1,
+      "VAE"
+    ],
+    [
+      8,
+      10,
+      0,
+      11,
+      0,
+      "MODEL"
+    ],
+    [
+      9,
+      11,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      10,
+      20,
+      0,
+      21,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      11,
+      3,
+      0,
+      24,
+      0,
+      "NOISE"
+    ],
+    [
+      12,
+      21,
+      0,
+      24,
+      1,
+      "GUIDER"
+    ],
+    [
+      13,
+      22,
+      0,
+      24,
+      2,
+      "SAMPLER"
+    ],
+    [
+      14,
+      23,
+      0,
+      24,
+      3,
+      "SIGMAS"
+    ],
+    [
+      15,
+      20,
+      1,
+      24,
+      4,
+      "LATENT"
+    ],
+    [
+      16,
+      24,
+      0,
+      25,
+      0,
+      "LATENT"
+    ],
+    [
+      17,
+      13,
+      0,
+      25,
+      1,
+      "VAE"
+    ],
+    [
+      18,
+      25,
+      0,
+      30,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.55,
+      "offset": [
+        40,
+        40
+      ]
+    }
+  },
+  "version": 0.4
+}
