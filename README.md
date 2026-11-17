@@ -16,15 +16,17 @@ YouTube「AIカタチラボ」の動画で使った、[ComfyUI](https://github.c
 | [009_MOSS_Image](009_MOSS_Image) | 枠を描いて人や物・文字（英語・日本語）の配置を決め、画像を作るワークフロー | MOSS-Image | [9本目](https://youtu.be/6GA2ObAW-cs) |
 | [010_H3_PrefixStream](010_H3_PrefixStream) | 前の1本の終わりを引き継いで、つなぎ目がなめらかな長い動画を作り、最後まで同じ顔を保つワークフロー（PrefixStream × RefMod） | MiniMax H3（10Eros Max） | [10本目](https://youtu.be/DyX4Btu6ozk) |
 | [011_P-H3-Image_NoLoRA](011_P-H3-Image_NoLoRA) | LoRA を作らずに、人物の顔・服・ポーズの画像から、同じ人物のまま服やポーズを変えた画像を作るワークフロー（画像1〜5枚） | P-H3-Image | [11本目](https://youtu.be/pgHUkuruoyE) |
+| [012_MiniMax-H3_Text2Image2Video](https://github.com/ai-katachi-lab/012_MiniMax-H3_Text2Image2Video) | テキストから人物・服・背景の画像を作り、その人物が話して動く長い動画にして、高解像度・顔の仕上げまで1本で進めるワークフロー | MiniMax-H3-Image ＋ MiniMax H3 | [12本目](https://youtu.be/gI7Rubcn18E) |
 
 ## モデルのライセンス
 
 モデルはこのリポジトリに入っていません。各フォルダの README にある配布元から取得し、それぞれのライセンスにしたがって使ってください。
 
+- **MiniMax-H3-Image**（012）：[MiniMax-H3-Image Community License](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/main/LICENSE)。MiniMax H3 とは別のライセンスです。米国・EU・英国・韓国での利用と、作った画像・動画をそれらの地域で表示することが認められていません。世界から見られる場所に公開する前に、MiniMax の許可（waiver）の申請先 https://platform.minimax.io/console/license を確認してください。
 - **MiniMax H3 とその派生モデル（10Eros Max・P-H3-Image など）**：[MiniMax H3 Community License](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE)。生成した動画・画像を公開するときは AI で作ったことを明示し、商用で使う場合は「MiniMax H3」の表示が必要です。地域や事業の規模によって条件が変わるので、使う前にライセンス本文を確認してください。
 - **Anima**（004）：[CircleStone Labs Non-Commercial License](https://huggingface.co/circlestone-labs/Anima/blob/main/LICENSE.md)。非商用ライセンスです。
 - **Qwen-Image 2.1**（005）：[Qwen RESEARCH LICENSE](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE)。研究・評価のみで、商用利用はできません。
-- **InsightFace buffalo_l**（008 の実写の顔の見分けに使用、ノードが自動で取得）：非商用の研究用です。
+- **InsightFace buffalo_l**（008・012 の実写の顔の見分けに使用、ノードが自動で取得）：非商用の研究用です。
 
 ## このリポジトリのライセンス
 
