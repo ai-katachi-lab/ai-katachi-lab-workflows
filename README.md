@@ -16,7 +16,7 @@ YouTube「AIカタチラボ」の動画で使った、[ComfyUI](https://github.c
 | [009_MOSS_Image](009_MOSS_Image) | 枠を描いて人や物・文字（英語・日本語）の配置を決め、画像を作るワークフロー | MOSS-Image | [9本目](https://youtu.be/6GA2ObAW-cs) |
 | [010_H3_PrefixStream](010_H3_PrefixStream) | 前の1本の終わりを引き継いで、つなぎ目がなめらかな長い動画を作り、最後まで同じ顔を保つワークフロー（PrefixStream × RefMod） | MiniMax H3（10Eros Max） | [10本目](https://youtu.be/DyX4Btu6ozk) |
 | [011_P-H3-Image_NoLoRA](011_P-H3-Image_NoLoRA) | LoRA を作らずに、人物の顔・服・ポーズの画像から、同じ人物のまま服やポーズを変えた画像を作るワークフロー（画像1〜5枚） | P-H3-Image | [11本目](https://youtu.be/pgHUkuruoyE) |
-| [012_MiniMax-H3_Text2Image2Video](https://github.com/ai-katachi-lab/012_MiniMax-H3_Text2Image2Video) | テキストから人物・服・背景の画像を作り、その人物が話して動く長い動画にして、高解像度・顔の仕上げまで1本で進めるワークフロー | MiniMax-H3-Image ＋ MiniMax H3 | [12本目](https://youtu.be/gI7Rubcn18E) |
+| [012_MiniMax-H3_Text2Image2Video](012_MiniMax-H3_Text2Image2Video) | テキストから人物・服・背景の画像を作り、その人物が話して動く長い動画にして、高解像度・顔の仕上げまで1本で進めるワークフロー | MiniMax-H3-Image ＋ MiniMax H3 | [12本目](https://youtu.be/gI7Rubcn18E) |
 
 ## モデルのライセンス
 
